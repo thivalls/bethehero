@@ -2,16 +2,22 @@ import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
 export default StyleSheet.create({
-  container: {
+  page: {
     flex: 1,
+  },
+
+  container: {
     paddingHorizontal: 24,
-    paddingTop: Constants.statusBarHeight + 20,
   },
 
   header: {
+    paddingTop: Constants.statusBarHeight + 15,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    paddingBottom: 15,
+    paddingHorizontal: 24
   },
 
   incident: {
@@ -45,24 +51,27 @@ export default StyleSheet.create({
     padding:24,
     borderRadius: 8,
     backgroundColor: '#fff',
-    marginBottom: 16,
+    marginBottom: 0,
   },
 
   heroTitle: {
     fontWeight: 'bold',
     fontSize: 20,
     color: '#13131a',
-    lineHeight: 30
+    lineHeight: 20,
+    textAlign: 'center'
   },
 
   heroDescription: {
     fontSize: 15,
     color: '#737380',
-    marginTop: 16
+    marginTop: -5,
+    marginBottom: 10,
+    textAlign: 'center'
   },
 
   actions: {
-    marginTop: 16,
+    marginTop: 3,
     flexDirection: 'row',
     justifyContent: 'space-between'
   },

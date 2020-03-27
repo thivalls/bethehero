@@ -3,15 +3,17 @@ import Constants from 'expo-constants';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
     paddingHorizontal: 24,
-    paddingTop: Constants.statusBarHeight + 20,
   },
 
   header: {
+    paddingTop: Constants.statusBarHeight + 15,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    paddingBottom: 15,
+    paddingHorizontal: 24
   },
 
   headerText: {
@@ -25,20 +27,20 @@ export default StyleSheet.create({
 
   title: {
     fontSize: 30,
-    marginBottom: 16,
-    marginTop: 48,
+    marginBottom: 0,
+    marginTop: 9,
     color: '#13131a',
     fontWeight: 'bold'
   },
 
   description: {
     fontSize: 16,
-    lineHeight: 24,
+    lineHeight: 20,
     color: '#737380'
   },
 
   incidentsList: {
-    marginTop: 32
+    marginTop: 16
   },
 
   incident: {
