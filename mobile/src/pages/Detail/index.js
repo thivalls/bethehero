@@ -1,7 +1,7 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Linking, ScrollView } from 'react-native';
 import * as MailComposer from 'expo-mail-composer';
 
 import api from '../../services/api';
@@ -33,7 +33,10 @@ export default function Detail() {
   }
 
   return (
+
     <View style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        
       <View style={styles.header}>
         <Image source={logoImg} />
         <TouchableOpacity>
@@ -73,12 +76,12 @@ export default function Detail() {
         <Text style={styles.incidentValue}>
           {incident.title}
         </Text>
-        {/* <Text style={styles.incidentProperty}>
+        <Text style={styles.incidentProperty}>
           Descrição
         </Text>
         <Text style={styles.incidentValue}>
           {incident.description}
-        </Text> */}
+        </Text>
         <Text style={styles.incidentProperty}>
           VALOR
         </Text>
@@ -106,6 +109,8 @@ export default function Detail() {
           </TouchableOpacity>
         </View>
       </View>
+
+      </ScrollView>
     </View>
   );
 }
