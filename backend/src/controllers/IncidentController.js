@@ -23,29 +23,6 @@ module.exports = {
     return res.json(incidents);
   },
 
-  async show(req, res) {
-    const { id } = req.params;
-
-    const incident = await connection('incidents')
-      .join('ongs', 'ongs.id', '=', 'incidents.ong_id')
-      .select([
-        'incidents.*',
-        'ongs.name',
-        'ongs.email',
-        'ongs.whatsapp',
-        'ongs.city',
-        'ongs.uf'
-      ])
-      .where('incidents.id', id)
-      .first();
-
-    if (incident) {
-      return res.json(incident);
-    }
-
-    return res.json({ error: "This incident not exists." });
-  },
-
   async delete(req, res) {
     const { id } = req.params;
     const ong_id = req.headers.authorization;
