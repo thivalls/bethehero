@@ -46,7 +46,7 @@ export default function Incidents() {
   }, [])
 
   return (
-    <View>
+    <View style={styles.page}>
       <View style={styles.header}>
         <Image source={logoImg} />
         <Text style={styles.headerText}>
@@ -57,9 +57,9 @@ export default function Incidents() {
         <Text style={styles.title}>Bem vindo!</Text>
         <Text style={styles.description}>
           Escolha um dos casos abaixo e salve o dia de alguém.
-      </Text>
+        </Text>
       </View>
-      <View style={styles.container}>
+      <View style={[styles.safeArea, {paddingHorizontal: 24}]}>
         <FlatList
           data={incidents}
           style={styles.incidentsList}
@@ -71,19 +71,19 @@ export default function Incidents() {
             <View style={styles.incident}>
               <Text style={styles.incidentProperty}>
                 ONG:
-          </Text>
+              </Text>
               <Text style={styles.incidentValue}>
                 {incident.name}
               </Text>
               <Text style={styles.incidentProperty}>
                 CASO:
-          </Text>
+              </Text>
               <Text style={styles.incidentValue}>
                 {incident.title}
               </Text>
               <Text style={styles.incidentProperty}>
                 VALOR
-          </Text>
+              </Text>
               <Text style={styles.incidentValue}>
                 {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value)}
               </Text>
@@ -94,7 +94,7 @@ export default function Incidents() {
               >
                 <Text style={styles.detailsButtonText}>
                   Ver mais detalhes
-            </Text>
+                </Text>
                 <Feather name="arrow-right" size={18} color="#E02041" />
               </TouchableOpacity>
             </View>

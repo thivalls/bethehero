@@ -2,8 +2,16 @@ import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
 export default StyleSheet.create({
+  page: {
+    flex: 1,
+  },
+
   container: {
     paddingHorizontal: 24,
+  },
+
+  safeArea: {
+    flex: 1,
   },
 
   header: {
